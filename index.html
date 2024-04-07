@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>3D Image Gallery</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="box">
+                <span style="--i:1;"><img src="image1.jpg"></span>
+                <span style="--i:2;"><img src="image2.jpg"></span>
+                <span style="--i:3;"><img src="image3.jpg"></span>
+                <span style="--i:4;"><img src="image4.jpg"></span>
+                <span style="--i:5;"><img src="image5.jpg"></span>
+                <span style="--i:6;"><img src="image6.jpg"></span>
+                <span style="--i:7;"><img src="image7.jpg"></span>
+                <span style="--i:8;"><img src="image9.jpg"></span>
+            </div>
+            <div class="btns">
+                <div class="btn prev"></div>
+                <div class="btn next"></div>
+            </div>
+        </div>
+        <script>
+            let prev = document.querySelector(".prev");
+            let next = document.querySelector(".next");
+            let box = document.querySelector(".box");
+
+            let degrees = 0;
+            prev.addEventListener("click", function(){
+                degrees += 45;
+                box.style = `transform: perspective(1000px) rotateY(${degrees}deg)`; 
+            })
+            next.addEventListener("click", function(){
+                degrees -= 45;
+                box.style = `transform: perspective(1000px) rotateY(${degrees}deg)`
+            })
+        </script>
+    </body>
+
+</html>
